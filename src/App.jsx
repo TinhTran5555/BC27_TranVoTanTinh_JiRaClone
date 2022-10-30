@@ -2,7 +2,6 @@ import { Box } from "@mui/system";
 import React, { Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import CheckoutRoute from "./Routes/CheckoutRoute";
 const Loader = React.lazy(() => import("./UI/Display/Loader/Loader"));
 const Login = React.lazy(() => import("./Modules/Auth/Components/Login"));
 const Register = React.lazy(() => import("./Modules/Auth/Components/Register"));
@@ -20,18 +19,9 @@ function App() {
         }
       >
         <Routes>
-          <Route
-            path="/"
-            element={
-              <CheckoutRoute>
-                <MainLayout />
-              </CheckoutRoute>
-            }
-          ></Route>
-          <Route path="/" element={<CheckoutRoute />}>
-            <Route path="/" element={<MainLayout />}>
-              <Route path="/user" element={<User />} />
-            </Route>
+          <Route path="/" element={<MainLayout />}></Route>
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/user" element={<User />} />
           </Route>
           <Route path="/">
             <Route path="/login" element={<Login />}></Route>
