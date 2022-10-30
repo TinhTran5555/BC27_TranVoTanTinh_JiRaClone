@@ -71,7 +71,7 @@ const NavItem = styled(Box)(({ theme }) => ({
 }));
 
 const Navigation = () => {
-  const [isUserManager, setIsUserManager] = useState(true);
+  const [isUserManager, setIsUserManager] = useState(false);
 
   const navigate = useNavigate();
 

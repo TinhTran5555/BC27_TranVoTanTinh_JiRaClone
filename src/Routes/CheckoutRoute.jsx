@@ -1,7 +1,7 @@
-import { Navigate } from "react-router-dom";
+import { Navigate ,Outlet} from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const CheckoutRoute = ({children}) => {
+const CheckoutRoute = () => {
  
   const { data } = useSelector((state) => state.auth );
  
@@ -11,7 +11,7 @@ const CheckoutRoute = ({children}) => {
   }
  
 
- return children;
+ return <Outlet/>;
 };
 
 export default CheckoutRoute;

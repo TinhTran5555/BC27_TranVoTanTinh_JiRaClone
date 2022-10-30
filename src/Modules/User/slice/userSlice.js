@@ -4,7 +4,6 @@ import projectAPIs from "../../../app/apis/projectAPIs/projectAPIs";
 
 const initialState = {
   user: [],
-  projectDetail: [],
   isLoading: false,
   error: "",
 };
