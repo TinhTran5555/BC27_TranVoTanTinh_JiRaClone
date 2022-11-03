@@ -39,7 +39,11 @@ export const deleteUserThunk = thunk.request("user/deleteUser", deleteUser);
 const userSlice = createSlice({
   name: "project",
   initialState,
-  reducers: {},
+  reducers: {
+    clearDataUser: (state) => {
+      state.user = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllUserThunk.pending, (state) => {
@@ -67,5 +71,5 @@ const userSlice = createSlice({
       });
   },
 });
-
+export const { clearDataUser } = userSlice.actions;
 export default userSlice.reducer;
